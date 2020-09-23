@@ -20,14 +20,13 @@ var download = function(uri, filename, callback){
 var setGuildIcon = function(guild){
         downloadMyHouse();
         guild.setIcon('./myhouse.png')
-                .then(updated => console.log(""))
+                .then(updated => console.log("done"))
                 .catch(console.error);
 }
 var downloadMyHouse = function(){
         download(process.env.HOMEURL,"myhouse.png",function(){
                 console.log('done');
         });
-        return new Promise(function(){console.log('done')});
 }
 client.login(process.env.BOT_TOKEN);
 
